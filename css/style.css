@@ -1,9 +1,12 @@
 body {
     padding-top: 80px; 
     font-family: 'Roboto', 'Arial', sans-serif;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
-header{
-    position:fixed;
+
+header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -15,83 +18,119 @@ header{
     padding: 0 10%;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
+    box-sizing: border-box;
 }
+
 header a {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bolder;
     color: whitesmoke;
 }
+
 header a span {
     color: rgb(59, 46, 233);
-
 }
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 40px;
+    margin: 0;
+    padding: 0;
+}
 
-}
-nav ul li a{
+nav ul li a {
     color: white;
+    text-decoration: none;
+    font-weight: 500;
 }
-#hamburger{
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#theme-toggle, #hamburger {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    display: inline-block;
+}
+
+#hamburger {
     display: none;
 }
+
 section {
     padding: 60px 10%;
     max-width: 1200px;
     margin: 0 auto;
-
 }
+
 section h2 {
-    font-size:  2rem;
-    color:black ;
+    font-size: 2rem;
+    color: black;
     margin-bottom: 10px;
     border-bottom: 3px solid #2f7a2f;
     display: inline-block;
     padding-bottom: 5px;
 }
-#home{
+
+#home {
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: 80px;
     gap: 40px;
 }
-#home h1{
+
+#home h1 {
     font-size: 2.5rem;
     color: #2f7a2f;
     margin: 10px 0;
-
 }
-#home h2{
+
+#home h2 {
     font-size: 1.3rem;
     color: #2f7a2f;
     border: none;
 }
- #home img{
+
+#home img {
     width: 280px;
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid #2f7a2f;
-    box-shadow: 0 4px 15px rgba(0,0,0.15)
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 
- }
- #about ul{
+#about p {
+    font-size: 1.15rem; 
+    line-height: 1.8;   
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#about ul {
     list-style: none;
     margin-top: 15px;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2 px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
- }
- #about ul li{
+#about ul li {
     margin-bottom: 8px;
     font-size: 1rem;
- }
+}
+
 #skills div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -145,6 +184,7 @@ section h2 {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 5px;
+    box-sizing: border-box;
 }
 
 #contact button {
@@ -161,12 +201,6 @@ section h2 {
 #contact button:hover {
     background-color: #235c23;
 }
-#about p {
-    font-size: 1.15rem; 
-    line-height: 1.8;   
-    color: #333;
-    margin-bottom: 15px;
-}
 
 body.dark-theme {
     background-color: #121212;
@@ -177,6 +211,10 @@ body.dark-theme header {
     background-color: #1b421b;
 }
 
+body.dark-theme #about p {
+    color: #e0e0e0;
+}
+
 body.dark-theme #about ul,
 body.dark-theme #projects div > div,
 body.dark-theme #contact form {
@@ -185,13 +223,41 @@ body.dark-theme #contact form {
 }
 
 body.dark-theme section h2,
-body.dark-theme #home h1 {
+body.dark-theme #home h1,
+body.dark-theme #skills h3 {
     color: #81c784;
 }
-#theme-toggle {
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px 10px;
+
+@media (max-width: 768px) {
+    #hamburger {
+        display: block; 
+    }
+    nav ul {
+        display: none; 
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(47, 122, 47);
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        gap: 20px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    #home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #home img {
+        width: 200px;
+        height: 200px;
+    }
 }
+
