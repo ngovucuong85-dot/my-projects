@@ -81,7 +81,7 @@
                 <div>
                     <h3>Du an</h3>
                     <p>day la bai thuc hanh dau tien</p>
-                    <a href="https://github.com/ngovucuong85-dot/my-first-project" target="_blank">Xem Code</a>
+                    <a href="https://github.com/ngovucuong85-dot/my-projects" target="_blank">Xem Code</a>
                 </div>
             </div>
         </section>
@@ -91,21 +91,21 @@
             <div>
                 <p>Email: ngovucuong85@gmail.com</p>
                 <p>So dien thoai: 0373196430</p>
-                <form id="contact-form">
+                <form action="https://formspree.io/f/mbgjgdjd" method="POST" id="contact-form">
                     <div>
                         <label for="fullname">Ho va Ten</label>
-                        <input type="text" id="fullname" placeholder="Nhap ho va ten">
+                        <input type="text" name="name" id="fullname" placeholder="Nhap ho va ten" required>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="...@gmail.com">
+                        <input type="email" name="email" id="email" placeholder="...@gmail.com" required>
                     </div>
                     <div>
                         <label for="message">Noi dung</label>
-                        <textarea id="message" rows="4" placeholder="Nhap noi dung"></textarea>
+                        <textarea name="message" id="message" rows="4" placeholder="Nhap noi dung" required></textarea>
                     </div>
-                    <button type="submit">Gui tin nhan</button>
-                </form>
+                        <button type="submit">Gui tin nhan</button>
+                        </form> 
             </div>
         </section>
     </main>
